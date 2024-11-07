@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Filter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Marks Filter</h1>
+
+        <div class="filter-container">
+            <label for="subject">Select Subject:</label>
+            <select id="subject" name="subject" onchange="onSubjectChange()">
+                <option value="" disabled selected>Choose a Subject</option>
+                <option value="English">English</option>
+                <option value="Maths">Maths</option>
+                <option value="Science">Science</option>
+                <option value="SocialScience">Social Science</option>
+            </select>
+        </div>
+        <div class="filter-options">
+            <label>Filter By:</label>
+            <div class="radio-group">
+                <input type="radio" id="above" name="filterCondition" value="above">
+                <label for="above">Above</label>
+                <input type="radio" id="below" name="filterCondition" value="below">
+                <label for="below">Below</label>
+                <input type="radio" id="between" name="filterCondition" value="between">
+                <label for="between">Between</label>
+            </div>
+            <div id="betweenInputs" class="hidden">
+                <label for="minValue">Min:</label>
+                <input type="number" id="minValue" class="filter-input">
+                <label for="maxValue">Max:</label>
+                <input type="number" id="maxValue" class="filter-input">
+            </div>
+            <div id="singleValueInput" class="hidden">
+                <label for="valueInput">Value:</label>
+                <input type="number" id="valueInput" class="filter-input">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="applyFilter" onclick="applyFilter()">Filter</button>
+            <button id="clearFilter" onclick="clearFilter()">Clear</button>
+        </div>
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th id="englishHeader">English</th>
+                    <th id="mathsHeader">Maths</th>
+                    <th id="scienceHeader">Science</th>
+                    <th id="socialScienceHeader">Social Science</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
